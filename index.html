@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>page</title>
+<style>
+body{
+background-image:linear-gradient(yellow 0%,yellow 50%,pink 50%,pink 100%);
+height:1080px;
+}
+.main{
+height:400px;
+width:270px;
+ background:white;
+ border-radius:10px;
+ position: absolute;
+margin-top:300px;
+border:1px solid silver;
+ overflow:hidden;
+box-shadow:-10px -10px 2px black;
+}
+#ip{
+margin:10px 3px 10px 10px;
+ border: none;
+ background:silver;
+height:25px;
+}
+#btn{
+ height:25px;
+background:rgb(0,120,204);
+border:none;
+color:white;
+border-radius:2px;
+}
+.t1,.t2,.t3{
+font-size:25px;
+font-weight:bold;
+ }
+.t3{
+color:white;
+
+}
+.titles{
+ margin-left:300px;
+margin-top:420px;
+ position: absolute;
+ }
+.ac{
+ height:25px;
+ background:silver;
+ font-size:20px;
+ color:black;
+font-weight:400;
+margin:10px 5px 10px 5px;
+box-shadow:3px 3px 6px grey;
+ }
+ .e_btn{
+ height:25px;
+ 
+ color:white;
+ background:olive;
+ border:none;
+ border-radius:2px;
+ margin-top: -5px ;
+ }
+.d_btn{
+ height:25px;
+ margin:0px 0px 0px 5px;
+ color:white;
+ background:red;
+ border:none;
+ border-radius:2px;
+ margin-top: -5px ;
+ 
+ }
+
+</style>
+
+</head>
+<body>
+<div class="main" id="main">
+ <input type="search" placeholder="Type here" id="ip">
+   <button id="btn" onclick="getdata()"> ADD </button>
+</div>
+ <div class="titles">
+<p class="t1"> Write Source Code</p>
+<p class="t2"> LINK TO LEARN</p>
+<p class="t3"> HTML,CSS,Javascript</p>
+</div>
+
+<script>
+ function getdata(){
+const data=document.getElementById("ip").value;
+const dv=document.getElementById("main");
+const inp=document.createElement("input");
+ inp.setAttribute("type","radio");
+ inp.setAttribute("id","d_inp");
+const lab=document.createElement("lab");
+ const edit=document.createElement("button");
+  edit.onclick=function(){
+ const tf=document.createElement("input");
+  tf.setAttribute("type","text");
+  tf.setAttribute("id","tfid");
+  tf.style.width="100px";
+  edit.innerHTML="SAVE";
+  edit.style.background="teal";
+  lab.innerHTML="";
+  lab.appendChild(tf);
+  edit.onclick=function(){
+  edit.innerHTML="EDIT";
+  edit.style.background="olive";
+  const c_data=document.getElementById("tfid").value; 
+  tf.remove();
+  lab.innerHTML=c_data;
+  }
+  }
+ edit.innerHTML="EDIT";
+ edit.classList.add("e_btn");
+const del=document.createElement("button");
+const br=document.createElement("br");
+del.setAttribute("id","d");
+var d=document.getElementById("d");
+ del.onclick=function(){
+ inp.remove();
+ edit.remove();
+ lab.remove();
+ del.remove();
+  }
+ del.innerHTML="DEL";
+ del.classList.add("d_btn");
+ lab.innerHTML=data;
+ lab.classList.add("ac"); 
+ dv.appendChild(inp);
+ dv.appendChild(lab);
+ dv.appendChild(edit);
+ dv.appendChild(del);
+ dv.appendChild(br);
+ }
+
+</script>
+</body>
+</html>
